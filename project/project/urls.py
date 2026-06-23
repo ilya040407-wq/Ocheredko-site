@@ -20,6 +20,7 @@ from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('health/', HealthApiView.as_view()),
     path('list/', UserListView.as_view()),
     path('register/', RegApiView.as_view()),
     path('login/', AuthApiView.as_view()),

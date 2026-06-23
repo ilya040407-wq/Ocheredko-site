@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://ocheredko-site.onrender.com/:path*"
+    },
+    {
+      "source": "/((?!static/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

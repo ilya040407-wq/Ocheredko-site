@@ -27,10 +27,12 @@ Environment Variables: `SECRET_KEY`, `DEBUG=False`, SMTP (`EMAIL_HOST_USER`, `EM
 | Build Command | `npm install && npm run build` |
 | Output Directory | `build` |
 
-Environment Variable:
+Запросы к API идут через прокси `/api` → Render (файл `reakt/vercel.json`).
+
+Опционально:
 
 ```
-REACT_APP_API_URL=https://ocheredko-site.onrender.com
+REACT_APP_API_URL=/api
 ```
 
 ## Локальный запуск

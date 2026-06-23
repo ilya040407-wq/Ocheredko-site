@@ -117,6 +117,21 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://ocheredko-site.vercel.app',
+    'https://.vercel.app',
+    'https://ocheredko-site.onrender.com',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',

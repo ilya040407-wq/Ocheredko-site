@@ -97,6 +97,17 @@ class AuthApiView(ObtainAuthToken):
         )
 
 
+class HealthApiView(APIView):
+    permission_classes = [AllowAny]
+    authentication_classes = []
+
+    def get(self, request):
+        return Response({
+            'status': 'ok',
+            'smtp_configured': _smtp_configured(),
+        })
+
+
 class FeedbackApiView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = []
