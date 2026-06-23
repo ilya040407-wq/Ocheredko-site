@@ -92,7 +92,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
@@ -101,7 +101,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://ocheredko-site.onrender.com',
     'https://ocheredko-site.vercel.app',
-    'https://zxc-beryl-psi.vercel.app',
 ]
 
 _extra_cors = os.environ.get('CORS_ALLOWED_ORIGINS', '')
