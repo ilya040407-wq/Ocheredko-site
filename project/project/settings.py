@@ -101,6 +101,18 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://ocheredko-site.onrender.com',
     'https://ocheredko-site.vercel.app',
+    'https://zxc-beryl-psi.vercel.app',
+]
+
+_extra_cors = os.environ.get('CORS_ALLOWED_ORIGINS', '')
+if _extra_cors:
+    CORS_ALLOWED_ORIGINS.extend(
+        origin.strip() for origin in _extra_cors.split(',') if origin.strip()
+    )
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r'^https://.*\.vercel\.app$',
+    r'^https://.*\.netlify\.app$',
 ]
 
 CORS_ALLOW_CREDENTIALS = True

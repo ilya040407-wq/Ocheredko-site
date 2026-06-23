@@ -30,16 +30,24 @@ const Feedback = () => {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json()
+      let data = {}
+      try {
+        data = await response.json()
+      } catch {
+        data = {}
+      }
 
       if (!response.ok) {
-        throw new Error(data.message || data.detail || 'Ошибка отправки')
+        throw new Error(data.message || data.detail || `Ошибка сервера (${response.status})`)
       }
 
       setStatus({ type: 'success', text: data.message || 'Сообщение отправлено!' })
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
-      setStatus({ type: 'error', text: error.message })
+      const text = error.message === 'Failed to fetch'
+        ? `Не удалось связаться с сервером. URL: ${API_URL}. Подождите 30 сек и попробуйте снова (Render может просыпаться).`
+        : error.message
+      setStatus({ type: 'error', text })
     } finally {
       setLoading(false)
     }
