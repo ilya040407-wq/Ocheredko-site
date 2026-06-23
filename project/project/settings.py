@@ -122,6 +122,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://ocheredko-site.onrender.com',
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
