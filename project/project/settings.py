@@ -110,16 +110,15 @@ if _extra_cors:
     )
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    r'^https://.*\.vercel\.app$',
-    r'^https://.*\.netlify\.app$',
-    r'^https://.*\.projects\.vercel\.com$',
+    r'^https://([a-zA-Z0-9-]+\.)*vercel\.app$',
+    r'^https://([a-zA-Z0-9-]+\.)*vercel\.com$',
+    r'^https://([a-zA-Z0-9-]+\.)*netlify\.app$',
 ]
-
-CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     'https://ocheredko-site.vercel.app',
     'https://.vercel.app',
+    'https://.vercel.com',
     'https://ocheredko-site.onrender.com',
 ]
 

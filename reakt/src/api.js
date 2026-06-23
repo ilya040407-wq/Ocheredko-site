@@ -1,17 +1,10 @@
-const getApiUrl = () => {
-  if (process.env.REACT_APP_API_URL) {
-    return process.env.REACT_APP_API_URL.replace(/\/$/, '')
-  }
+const isLocal =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1'
 
-  const host = window.location.hostname
-  if (host === 'localhost' || host === '127.0.0.1') {
-    return 'http://127.0.0.1:8000'
-  }
-
-  // На Vercel запросы идут через /api (vercel.json proxy) — без CORS-ошибок
-  return '/api'
-}
-
-const API_URL = getApiUrl()
+// На Vercel всегда /api (прокси в vercel.json) — иначе CORS блокирует preview/production URL
+const API_URL = isLocal
+  ? (process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+  : '/api'
 
 export default API_URL
