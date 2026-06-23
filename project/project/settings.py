@@ -20,7 +20,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.onrender.com',
-    'ocheredko-rm90.onrender.com',
+    'ocheredko-site.onrender.com',
 ]
 
 INSTALLED_APPS = [
@@ -99,8 +99,8 @@ USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://ocheredko-rm90.onrender.com',
-    'https://zxc-beryl-psi.vercel.app',
+    'https://ocheredko-site.onrender.com',
+    'https://ocheredko-site.vercel.app',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
